@@ -1,0 +1,134 @@
+*{box-sizing: border-box;
+  margin: 0;
+  padding: 0;}
+
+body {display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      gap: 30px;
+      background-color: rgb(28, 28, 41);}
+
+
+/*.Animaciones{display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             gap: 24px;}*/
+
+
+/*From to*/ /*BOTON*/
+@keyframes aparecer {
+    
+    from {opacity: 0;
+          transform: scale(0.5);
+          border-radius: 30px;
+          transform: translateX(-300px);}
+
+    to {opacity: 1;
+        transform: scale(1);
+        border-radius: 0px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        font-size: 15px;
+        transform: translateX(0px);}}
+
+.Boton {background-color: rgba(112, 128, 176);
+        color: white;
+        padding: 6px 16px;
+        font-size: 1rem;
+        animation: aparecer 3s ease forwards;
+        display: flex;
+        border: none;
+        order: 4;}
+
+.Boton:hover {background-color: rgb(78, 88, 117);
+              /*border-color: rgb(211, 211, 211);*/
+              transform: scale(1.1);
+              transition: background-color 0.3s ease, transform 0.3s ease;}
+
+.Boton:active {background-color: rgb(53, 59, 77);}
+
+
+
+
+/*0% 50% 100%*/ /*ICONO*/
+@keyframes pulso {
+  0%   {transform: scale(1);}
+  50%  {transform: scale(1.4);}
+  100% {transform: scale(1);}}
+
+@keyframes opacidad {
+
+  from {opacity: 0;}
+  to {opacity: 100;}
+}
+
+.icono {font-size: 3rem;
+        cursor:pointer;
+        animation: pulso 3s ease-in-out infinite, opacidad 3s ease-in-out;
+        transition: transform 0.3s ease, text-shadow 0.3s ease;
+        order: 2;}
+
+.icono:hover {animation-play-state: paused;}
+
+.icono:active {text-shadow: /*X*/0 /*Y*/0 /*Desenfoque*/10px orange;}
+
+
+
+
+
+
+
+/*0% 25% 50% 75% 100%*/ /*IMAGEN*/
+
+@keyframes colores {
+  0%   {border-color: royalblue;}
+  25%  {border-color: rgb(28, 202, 255);}
+  50%  {border-color: royalblue;}
+  75%  {border-color: rgb(28, 202, 255);}
+  100% {border-color: royalblue;}}
+
+@keyframes desplazamiento {
+  
+  from {transform: translateX(300px);
+        opacity: 0;
+      
+  to {transform: translateX(0px);
+      opacity: 1;}}
+
+  }
+
+.foto {width: 600px;
+       border: 4px solid royalblue;
+       border-radius: 12px;
+       animation: colores 5s ease-in-out infinite, desplazamiento 3s ease-out;
+       transition: transform 0.3s ease, opacity 0.3s ease;
+       transition: filter 3s ease;
+       display: flex;
+       order: 3;}
+
+.foto:hover {filter: blur(7px);
+             transition: filter 2s ease;}
+
+.foto:active {opacity: 0.5;}
+
+
+/*libre*/ /*TITULO*/
+
+@keyframes Cambio {
+
+  from {transform: scale(0);
+        color: rgba(112, 128, 176);
+        transform: translateY(-100px);
+        opacity: 0;}
+  
+  to {transform: scale(1.1);
+      color: rgb(182, 190, 214);}
+
+}
+
+h1 {animation: Cambio 3s ease-out forwards;
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 900;
+    font-style: normal;}
